@@ -26,7 +26,7 @@ int unidades = 0; ///variable que va de 0 - 9
 int decenas = 0; ///variable que va de 0 - 5
 
 void setup() {
-  pinMode(btn_incremento, INPUT);
+    pinMode(btn_incremento, INPUT);
   pinMode(btn_decremento, INPUT);
   for(int i = 4; i < 11; i++){
     pinMode(i, OUTPUT);
