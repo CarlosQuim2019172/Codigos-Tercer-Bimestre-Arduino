@@ -7,7 +7,7 @@
  * Curso: Taller de Electrónica Digital y Reparación de Computadoras I
  * Nombre: Carlos Alexander Quim Chapaz
  * Carné: 2019172 
- * Proyecto: Uso de Interrupciones externas ejemplo 3 - Bimeste III
+ * Proyecto: Intesidad de LED
 */
 
 //Directivas de Procesador
