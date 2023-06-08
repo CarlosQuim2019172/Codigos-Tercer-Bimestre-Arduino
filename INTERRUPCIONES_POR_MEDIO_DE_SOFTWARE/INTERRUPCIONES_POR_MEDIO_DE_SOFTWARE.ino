@@ -9,7 +9,6 @@
  * Carné: 2019172 
  * Proyecto: Uso de Interrupciones externas ejemplo 3 - Bimeste III
 */
-
 //Librerias
 #include <Ticker.h>
 #include <OneWire.h>
