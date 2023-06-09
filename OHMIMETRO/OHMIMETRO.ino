@@ -47,15 +47,15 @@ void convesion(){
   Vout = conver / 1023;
 
   //Realizamos la operación necesaria para obtener el valor de R1
-  valor = (Vcc / Vout) - 1;
+  valor = (Vcc - Vout) / Vout;
   R1 = R2 * valor; 
   
   //Imprimimos el valor de resistencia R1
   if(lectura){
     lcd_quim.setCursor(0,0);
     lcd_quim.print(" Valor de R1 :D ");
-    lcd_quim.setCursor(9,1);
-    lcd_quim.print(" ohms");
+    lcd_quim.setCursor(10,1);
+    lcd_quim.print("ohms");
     lcd_quim.setCursor(2,1);
     lcd_quim.print(R1);
   }
