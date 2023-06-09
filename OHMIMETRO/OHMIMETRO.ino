@@ -12,18 +12,22 @@
 
 //Directivas de Procesador
 #include <LiquidCrystal_I2C.h>
-#define v A3
+#define voltaje A3
 
 //Variables
-unsigned int r1;
-int vcc = 5;
-int r2 = -10000; //Resistencia de 10K
+int Vcc = 5;
+int R2 = 10000;
+float R1 = 0;
+float Vout = 0;
+float lectura = 0;
+float valor = 0;
+float conver = 0;
 
 //Constructor
 LiquidCrystal_I2C lcd_quim(0x27,16,2);
 
 //Funciones
-unsigned int convesion();
+void convesion();
 
 void setup() {
   lcd_quim.init();
@@ -34,15 +38,34 @@ void loop() {
   convesion();
 }
 
-unsigned int convesion(){
-  float conver = analogRead(v);
-  float vout = (5 * conver)/1023;
-  float multi = r2 * vout;
-  float res = vout - vcc;
-  r1 = multi/res;
+void convesion(){
+  //Leemos el valor del divisor de voltaje
+  lectura = analogRead(voltaje);
+  
+  //Realizamos la conversion de esa lectura
+  conver = lectura * Vcc;
+  Vout = conver / 1023;
 
-  lcd_quim.setCursor(0,0);
-  lcd_quim.print("-Valor de R1 :D-");
-  lcd_quim.setCursor(0,5);
-  lcd_quim.println(r1);
+  //Realizamos la operación necesaria para obtener el valor de R1
+  valor = (Vcc / Vout) - 1;
+  R1 = R2 * valor; 
+  
+  //Imprimimos el valor de resistencia R1
+  if(lectura){
+    lcd_quim.setCursor(0,0);
+    lcd_quim.print(" Valor de R1 :D ");
+    lcd_quim.setCursor(9,1);
+    lcd_quim.print(" ohms");
+    lcd_quim.setCursor(2,1);
+    lcd_quim.print(R1);
+  }
+  
+  if(!lectura){
+    lcd_quim.setCursor(0,0);
+    lcd_quim.print("Sin Resistencia");
+    lcd_quim.setCursor(0,1);
+    lcd_quim.print("      :(       ");
+  }
+  
+
 }
