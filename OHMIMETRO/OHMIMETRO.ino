@@ -47,7 +47,7 @@ void convesion(){
   Vout = conver / 1023;
 
   //Realizamos la operación necesaria para obtener el valor de R1
-  valor = (Vcc - Vout) / Vout;
+  valor = (Vcc - Vout)/Vout;
   R1 = R2 * valor; 
   
   //Imprimimos el valor de resistencia R1
