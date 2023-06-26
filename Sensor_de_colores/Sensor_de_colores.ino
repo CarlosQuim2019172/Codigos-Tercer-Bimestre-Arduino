@@ -86,7 +86,7 @@ void setup() {
 void loop() {
   if (digitalRead(sensor) == false) {
     detector_objeto();
-    if (resultado_azul > 135 && resultado_azul < 175) {
+    if (resultado_azul > 105 && resultado_azul < 185) {
       digitalWrite(valido, HIGH); //Encendemos una Led verde si el objeto es valido
       //Detenemos la Banda transportadora
       digitalWrite(IN1, 0);
@@ -182,7 +182,7 @@ void Antihorario(void) {
 
 void posicion_s (void) {
   // bucle del recorrido de matriz 275 veces hasta la posicion del servo
-  for (int i = 0; i < 275; i++) {
+  for (int i = 0; i < 278; i++) {
     Antihorario();
   }
 }
