@@ -88,25 +88,15 @@ void loop() {
     detector_objeto();
     if (resultado_azul > 105 && resultado_azul < 185) {
       digitalWrite(valido, HIGH); //Encendemos una Led verde si el objeto es valido
-      //Detenemos la Banda transportadora
-      digitalWrite(IN1, 0);
-      digitalWrite(IN2, 0);
-      digitalWrite(IN3, 0);
-      digitalWrite(IN4, 0);
-      delay(100);
       //Movemos la banda hasta la posicion del servo
       posicion_s();
-      //Detenemos la Banda transportadora
-      digitalWrite(IN1, 0);
-      digitalWrite(IN2, 0);
-      digitalWrite(IN3, 0);
-      digitalWrite(IN4, 0);
       delay(500);
       //Accionamos el servo para poder mover el objeto de la banda
       empuje.write(0); //Movemos el servo hasta 0 grados
       delay(500);
       empuje.write(180); //Regresamos el servo a 180 grados
       digitalWrite(valido, LOW); //Apagamos la Led verde
+      delay(1500);
     }
     else {
       for (int a = 0; a < 4; a++) {
@@ -182,7 +172,7 @@ void Antihorario(void) {
 
 void posicion_s (void) {
   // bucle del recorrido de matriz 275 veces hasta la posicion del servo
-  for (int i = 0; i < 278; i++) {
+  for (int i = 0; i < 275; i++) {
     Antihorario();
   }
 }
