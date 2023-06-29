@@ -86,7 +86,7 @@ void setup() {
 void loop() {
   if (digitalRead(sensor) == false) {
     detector_objeto();
-    if (resultado_azul > 76 && resultado_azul < 178) {
+    if (resultado_azul > 100 && resultado_azul < 135) {
       digitalWrite(valido, HIGH); //Encendemos una Led verde si el objeto es valido
       //Movemos la banda hasta la posicion del servo
       posicion_s();
