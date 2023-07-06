@@ -1,3 +1,15 @@
+/*
+ * Fundacion Kinal
+ * Centro educativo tecnico laboral Kinal
+ * Electronica
+ * Grado: Quinto
+ * Sección: A
+ * Curso: Taller de electronica digital y reparación de computadoras I
+ * Nombre: Carlos Quim
+ * Carnet: 2019172
+ * Proyecto: Mapa de Guatemala
+*/
+
 //Librerias
 #include <Wire.h>
 #include <PCF8574.h>
