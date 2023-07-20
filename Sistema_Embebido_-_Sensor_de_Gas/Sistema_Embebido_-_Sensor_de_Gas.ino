@@ -27,7 +27,7 @@ int gas, conversion, promedio;
 
 
 //Constructores
-Ticker mediciones(sensor_gas, 5000);
+Ticker mediciones(sensor_gas, 3000);
 LedControl matriz = LedControl(11, 13, 10, 1); // Los numeros se refieren a que pin de arduino tienes en cada uno de los terminales
 /* 11 para el DIN, 13 para el CLK, 10 para el CS y el 1 se refiere a la asignacion de la matriz*/
 
@@ -121,7 +121,6 @@ void setup() {
 
 void loop() {
   mediciones.update();
-
   if (promedio < 50)
   {
     Serial.println("Su Habitación se Encuentra Libre de GAS");
